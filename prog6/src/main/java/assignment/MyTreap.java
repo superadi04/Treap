@@ -90,6 +90,7 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
 
     // Helper method to place node in Treap according to BST property
     // Return parent of Node space to be inserted
+    // NEED TO ACCOUNT FOR SAME KEYS
     private Node placeNodeBST(Node insertedNode, Node currNode) {
         K currKey = currNode.getKey();
         K insertedKey = insertedNode.getKey();
@@ -113,9 +114,64 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
         return null;
     }
 
+    private void searchRotate(Node nodeToRotate, Node curr) {
+        searchRotate(nodeToRotate, curr.getLeftChild());
+        searchRotate(nodeToRotate, curr.getRightChild());
+
+        Node leftChild = curr.getLeftChild();
+        Node rightChild = curr.getRightChild();
+
+        if (leftChild != null && (leftChild.equals(nodeToRotate) || curr.getPriority() < leftChild.getPriority())) {
+            rotateRight(curr.getLeftChild());
+        } else if (rightChild != null && (rightChild.equals(nodeToRotate) || curr.getPriority() < rightChild.getPriority())) {
+            rotateLeft(curr.getRightChild());
+        }
+
+    }
+
+    // Given parent root where x is the left child of y:
+    // Rotate right around y
+    private void rotateRight(Node parent) {
+        Node a = parent.getLeftChild();
+        Node b = a.getLeftChild();
+        Node bRightSub = b.getRightChild();
+        b.setRightChild(a);
+        a.setLeftChild(bRightSub);
+        parent.setLeftChild(b);
+    }
+
+    // Given parent root where x is the right child of y:
+    // Rotate left around y
+    private void rotateLeft(Node parent) {
+        Node a = parent.getRightChild();
+        Node b = a.getLeftChild();
+        Node bLeftSub = b.getLeftChild();
+        b.setLeftChild(a);
+        a.setRightChild(bLeftSub);
+        parent.setRightChild(b);
+    }
+
     @Override
-    public Object remove(Comparable key) {
-        return null;
+    public V remove(K key) {
+
+    }
+
+    private void removeHelper(Node curr, K key) {
+        if (curr == null) {
+            return;
+        }
+
+        //removeHelper(curr.getLeftChild(), key);
+        //removeHelper(curr.getRightChild(), key);
+
+        Node leftChild = curr.getLeftChild();
+        Node rightChild = curr.getRightChild();
+
+        if (leftChild != null && (leftChild.equals(nodeToRotate) || curr.getPriority() < leftChild.getPriority())) {
+            rotateRight(curr.getLeftChild());
+        } else if (rightChild != null && (rightChild.equals(nodeToRotate) || curr.getPriority() < rightChild.getPriority())) {
+            rotateLeft(curr.getRightChild());
+        }
     }
 
     @Override
@@ -181,7 +237,7 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
         toStringHelper(output, root);
         return output.toString();
     }
-    
+
     // Helper method for toString(), pre-order traversal
     private void toStringHelper(StringBuilder output, Node curr) {
         if (curr == null) {
