@@ -19,12 +19,22 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
             this.priority = (int) (Math.random() * Treap.MAX_PRIORITY + 1);
         }
 
+        private Node(K key, V value, int priority) {
+            this.key = key;
+            this.value = value;
+            this.priority = priority;
+        }
+
         private void setLeftChild(Node leftChild) {
             this.leftChild = leftChild;
         }
 
         private void setRightChild(Node rightChild) {
             this.rightChild = rightChild;
+        }
+
+        private void setValue(V value) {
+            this.value = value;
         }
 
         private Node getLeftChild() {
@@ -46,6 +56,12 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
         private V getValue() {
             return this.value;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            Node curr = (Node) o;
+            return this.key.equals(curr.getKey());
+        }
     }
 
     private Node root;
@@ -54,23 +70,27 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
 
     }
 
+    private MyTreap(Node n) {
+        this.root = n;
+    }
+
     @Override
     public V lookup(K key) {
         if (key == null) {
             return null;
         }
+
         return lookupHelper(root, key);
     }
 
     private V lookupHelper(Node currNode, K key) {
-        if (currNode == null) {
-            return null;
-        } else if (currNode.getKey().equals(key)) {
+        if (key.compareTo(currNode.getKey()) < 0) {
+            lookupHelper(currNode.getLeftChild(), key);
+        } else if (key.compareTo(currNode.getKey()) > 0) {
+            lookupHelper(currNode.getLeftChild(), key);
+        } else {
             return currNode.getValue();
         }
-
-        lookupHelper(currNode.getLeftChild(), key);
-        lookupHelper(currNode.getRightChild(), key);
 
         return null;
     }
@@ -84,100 +104,124 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
             this.root = insertedNode;
         } else {
             placeNodeBST(insertedNode, root);
+            //searchRotate(placedParent, root);
         }
 
     }
 
     // Helper method to place node in Treap according to BST property
     // Return parent of Node space to be inserted
-    // NEED TO ACCOUNT FOR SAME KEYS
-    private Node placeNodeBST(Node insertedNode, Node currNode) {
+    private void placeNodeBST(Node insertedNode, Node currNode) {
         K currKey = currNode.getKey();
         K insertedKey = insertedNode.getKey();
 
-        if (currKey.compareTo(insertedKey) < 0) {
+        if (insertedKey.compareTo(currKey) < 0) {
             if (currNode.getLeftChild() == null) {
                 currNode.setLeftChild(insertedNode);
-                return currNode;
             } else {
                 placeNodeBST(insertedNode, currNode.getLeftChild());
             }
-        } else if (currKey.compareTo(insertedKey) > 0) {
+
+            if (currNode.getPriority() < currNode.getLeftChild().getPriority()) {
+                Node rotatedHead = rotateRight(currNode);
+                if (currNode.equals(root)) {
+                    root = rotatedHead;
+                } else {
+                    currNode.setLeftChild(rotatedHead);
+                }
+            }
+        } else if (insertedKey.compareTo(currKey) > 0) {
             if (currNode.getRightChild() == null) {
                 currNode.setRightChild(insertedNode);
-                return currNode;
             } else {
                 placeNodeBST(insertedNode, currNode.getRightChild());
+            }
+
+            if (currNode.getPriority() < currNode.getRightChild().getPriority()) {
+                Node rotatedHead = rotateLeft(currNode);
+                if (currNode.equals(root)) {
+                    root = rotatedHead;
+                } else {
+                    currNode.setRightChild(rotatedHead);
+                }
+            }
+        } else {
+            currNode.setValue(insertedNode.getValue());
+        }
+    }
+
+    // Given parent root where x is the left child of y:
+    // Rotate right around y
+    private Node rotateRight(Node a) {
+        Node b = a.getLeftChild();
+        Node bRightSub = b.getRightChild();
+        b.setRightChild(a);
+        a.setLeftChild(bRightSub);
+        return b;
+    }
+
+    // Given parent root where x is the right child of y:
+    // Rotate left around y
+    private Node rotateLeft(Node a) {
+        Node b = a.getRightChild();
+        Node bLeftSub = b.getLeftChild();
+        b.setLeftChild(a);
+        a.setRightChild(bLeftSub);
+        return b;
+    }
+
+
+    @Override
+    public V remove(K key) {
+        return removeHelper(root, key);
+    }
+
+
+    private V removeHelper(Node currNode, K deleteKey) {
+        K currKey = currNode.getKey();
+
+        if (deleteKey.compareTo(currKey) < 0) {
+            removeHelper(currNode.getLeftChild(), deleteKey);
+        } else if (deleteKey.compareTo(currKey) > 0) {
+            removeHelper(currNode.getRightChild(), deleteKey);
+        } else {
+            if (currNode.getLeftChild() != null && currNode.getRightChild() != null) {
+                if (currNode.getLeftChild().getPriority() < currNode.getRightChild().getPriority()) {
+                    rotateRight(currNode);
+                    //if (currNode.getRightChild())
+                } else {
+                    rotateLeft(currNode);
+                }
+            } else if (currNode.getLeftChild() != null) {
+                rotateRight(currNode);
+            } else if (currNode.getRightChild() != null) {
+                rotateLeft(currNode);
             }
         }
 
         return null;
     }
 
-    private void searchRotate(Node nodeToRotate, Node curr) {
-        searchRotate(nodeToRotate, curr.getLeftChild());
-        searchRotate(nodeToRotate, curr.getRightChild());
-
-        Node leftChild = curr.getLeftChild();
-        Node rightChild = curr.getRightChild();
-
-        if (leftChild != null && (leftChild.equals(nodeToRotate) || curr.getPriority() < leftChild.getPriority())) {
-            rotateRight(curr.getLeftChild());
-        } else if (rightChild != null && (rightChild.equals(nodeToRotate) || curr.getPriority() < rightChild.getPriority())) {
-            rotateLeft(curr.getRightChild());
-        }
-
-    }
-
-    // Given parent root where x is the left child of y:
-    // Rotate right around y
-    private void rotateRight(Node parent) {
-        Node a = parent.getLeftChild();
-        Node b = a.getLeftChild();
-        Node bRightSub = b.getRightChild();
-        b.setRightChild(a);
-        a.setLeftChild(bRightSub);
-        parent.setLeftChild(b);
-    }
-
-    // Given parent root where x is the right child of y:
-    // Rotate left around y
-    private void rotateLeft(Node parent) {
-        Node a = parent.getRightChild();
-        Node b = a.getLeftChild();
-        Node bLeftSub = b.getLeftChild();
-        b.setLeftChild(a);
-        a.setRightChild(bLeftSub);
-        parent.setRightChild(b);
-    }
-
-    @Override
-    public V remove(K key) {
-
-    }
-
-    private void removeHelper(Node curr, K key) {
-        if (curr == null) {
-            return;
-        }
-
-        //removeHelper(curr.getLeftChild(), key);
-        //removeHelper(curr.getRightChild(), key);
-
-        Node leftChild = curr.getLeftChild();
-        Node rightChild = curr.getRightChild();
-
-        if (leftChild != null && (leftChild.equals(nodeToRotate) || curr.getPriority() < leftChild.getPriority())) {
-            rotateRight(curr.getLeftChild());
-        } else if (rightChild != null && (rightChild.equals(nodeToRotate) || curr.getPriority() < rightChild.getPriority())) {
-            rotateLeft(curr.getRightChild());
-        }
+    // NEED TO IMPLEMENT
+    private boolean isLeafNode(Node currNode) {
+        return false;
     }
 
     @Override
     public Treap[] split(K key) {
         Treap[] splits = new Treap[2];
-        splitSearch(splits, root, key);
+
+        if (root == null) {
+            return splits;
+        }
+
+        Node n = new Node(key, null, Integer.MAX_VALUE);
+
+        splits[0] = new MyTreap(root.getLeftChild());
+        splits[1] = new MyTreap(root.getRightChild());
+
+        // Remove the added node
+
         return splits;
     }
 
