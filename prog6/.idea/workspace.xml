@@ -20,15 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf3e9fc8-582f-4f9e-afc3-0e1d42285603" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/MyTreap$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/MyTreap$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/MyTreap.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/MyTreap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/MyTreap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/MyTreap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment/Driver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment/MyTreap$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment/MyTreap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/Driver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/MyTreap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,22 +59,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.Tests">
-    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assignment.Driver" />
-      <module name="prog6" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Tests.checkIteratorSizeDuplicate">
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
@@ -91,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.checkInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.checkInsertDuplicate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
         <pattern>
@@ -101,13 +90,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkInsert" />
+      <option name="METHOD_NAME" value="checkInsertDuplicate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.checkRotateLeft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.checkIteratorSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
         <pattern>
@@ -117,7 +106,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkRotateLeft" />
+      <option name="METHOD_NAME" value="checkIteratorSize" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.checkIteratorSizeDuplicate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="prog6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment" />
+      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
+      <option name="METHOD_NAME" value="checkIteratorSizeDuplicate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.checkRemovePresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="prog6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment" />
+      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
+      <option name="METHOD_NAME" value="checkRemovePresent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,10 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests.checkIteratorSizeDuplicate" />
+        <item itemvalue="JUnit.Tests.checkIteratorSize" />
+        <item itemvalue="JUnit.Tests.checkRemovePresent" />
         <item itemvalue="JUnit.Tests" />
-        <item itemvalue="JUnit.Tests.checkInsert" />
-        <item itemvalue="Application.Driver" />
-        <item itemvalue="JUnit.Tests.checkRotateLeft" />
+        <item itemvalue="JUnit.Tests.checkInsertDuplicate" />
       </list>
     </recent_temporary>
   </component>
@@ -157,51 +179,59 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="25" width="1024" height="817" key="#Project_Structure" timestamp="1667760936718">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="0" y="25" width="1024" height="817" key="#Project_Structure/0.25.1440.817@0.25.1440.817" timestamp="1667760936718" />
     <state x="827" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1667529893173">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state x="827" y="217" key="#com.intellij.ide.util.MemberChooser/0.25.1440.816@0.25.1440.816" timestamp="1667529893173" />
     <state x="827" y="217" key="#com.intellij.ide.util.MemberChooser/0.25.1440.818@0.25.1440.818" timestamp="1667361468723" />
-    <state width="1396" height="208" key="GridCell.Tab.0.bottom" timestamp="1667759242163">
-      <screen x="0" y="25" width="1440" height="816" />
+    <state x="496" y="184" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1667766334396">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="496" y="184" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.25.1440.817@0.25.1440.817" timestamp="1667766334396" />
+    <state width="1396" height="207" key="GridCell.Tab.0.bottom" timestamp="1667772210677">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state width="1396" height="208" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1667759242163" />
-    <state width="1396" height="209" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667688339033" />
-    <state width="1396" height="208" key="GridCell.Tab.0.center" timestamp="1667759242162">
-      <screen x="0" y="25" width="1440" height="816" />
+    <state width="1396" height="207" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667772210677" />
+    <state width="1396" height="207" key="GridCell.Tab.0.center" timestamp="1667772210676">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state width="1396" height="208" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1667759242162" />
-    <state width="1396" height="209" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1667688339032" />
-    <state width="1396" height="208" key="GridCell.Tab.0.left" timestamp="1667759242162">
-      <screen x="0" y="25" width="1440" height="816" />
+    <state width="1396" height="207" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1667772210676" />
+    <state width="1396" height="207" key="GridCell.Tab.0.left" timestamp="1667772210675">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state width="1396" height="208" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1667759242162" />
-    <state width="1396" height="209" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1667688339032" />
-    <state width="1396" height="208" key="GridCell.Tab.0.right" timestamp="1667759242163">
-      <screen x="0" y="25" width="1440" height="816" />
+    <state width="1396" height="207" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1667772210675" />
+    <state width="1396" height="207" key="GridCell.Tab.0.right" timestamp="1667772210676">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state width="1396" height="208" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1667759242163" />
-    <state width="1396" height="209" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1667688339033" />
-    <state width="1396" height="241" key="GridCell.Tab.1.bottom" timestamp="1667759184378">
-      <screen x="0" y="25" width="1440" height="816" />
+    <state width="1396" height="207" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1667772210676" />
+    <state width="1396" height="241" key="GridCell.Tab.1.bottom" timestamp="1667772176260">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state width="1396" height="241" key="GridCell.Tab.1.bottom/0.25.1440.816@0.25.1440.816" timestamp="1667759184378" />
-    <state width="1396" height="242" key="GridCell.Tab.1.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667688316932" />
-    <state width="1396" height="241" key="GridCell.Tab.1.center" timestamp="1667759184376">
-      <screen x="0" y="25" width="1440" height="816" />
+    <state width="1396" height="241" key="GridCell.Tab.1.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667772176260" />
+    <state width="1396" height="241" key="GridCell.Tab.1.center" timestamp="1667772176259">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state width="1396" height="241" key="GridCell.Tab.1.center/0.25.1440.816@0.25.1440.816" timestamp="1667759184376" />
-    <state width="1396" height="242" key="GridCell.Tab.1.center/0.25.1440.817@0.25.1440.817" timestamp="1667688316931" />
-    <state width="1396" height="241" key="GridCell.Tab.1.left" timestamp="1667759184376">
-      <screen x="0" y="25" width="1440" height="816" />
+    <state width="1396" height="241" key="GridCell.Tab.1.center/0.25.1440.817@0.25.1440.817" timestamp="1667772176259" />
+    <state width="1396" height="241" key="GridCell.Tab.1.left" timestamp="1667772176259">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state width="1396" height="241" key="GridCell.Tab.1.left/0.25.1440.816@0.25.1440.816" timestamp="1667759184376" />
-    <state width="1396" height="242" key="GridCell.Tab.1.left/0.25.1440.817@0.25.1440.817" timestamp="1667688316931" />
-    <state width="1396" height="241" key="GridCell.Tab.1.right" timestamp="1667759184377">
-      <screen x="0" y="25" width="1440" height="816" />
+    <state width="1396" height="241" key="GridCell.Tab.1.left/0.25.1440.817@0.25.1440.817" timestamp="1667772176259" />
+    <state width="1396" height="241" key="GridCell.Tab.1.right" timestamp="1667772176259">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state width="1396" height="241" key="GridCell.Tab.1.right/0.25.1440.816@0.25.1440.816" timestamp="1667759184377" />
-    <state width="1396" height="242" key="GridCell.Tab.1.right/0.25.1440.817@0.25.1440.817" timestamp="1667688316931" />
+    <state width="1396" height="241" key="GridCell.Tab.1.right/0.25.1440.817@0.25.1440.817" timestamp="1667772176259" />
     <state width="719" height="408" key="XDebugger.FullValuePopup" timestamp="1667686624344">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
@@ -210,6 +240,10 @@
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state x="482" y="343" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.25.1440.816@0.25.1440.816" timestamp="1667366205626" />
+    <state x="386" y="195" key="run.anything.popup" timestamp="1667771676105">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="386" y="195" key="run.anything.popup/0.25.1440.817@0.25.1440.817" timestamp="1667771676105" />
     <state x="361" y="166" width="670" height="676" key="search.everywhere.popup" timestamp="1667597073957">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
@@ -219,30 +253,61 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/assignment/MyTreap.java</url>
-          <line>234</line>
+          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
+          <line>235</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/assignment/MyTreap.java</url>
-          <line>248</line>
+          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
+          <line>249</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/assignment/MyTreap.java</url>
-          <line>200</line>
-          <properties class="assignment.MyTreap" method="removeHelper">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="36" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
+          <line>353</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/assignment/Tests.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/assignment/MyTreap.java</url>
-          <line>263</line>
-          <properties class="assignment.MyTreap" method="placeNodePriority">
+          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
+          <line>264</line>
+          <properties class="assignment.TreapMap">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
+          <line>97</line>
+          <properties class="assignment.TreapMap" method="lookup">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
+          <line>201</line>
+          <properties class="assignment.TreapMap" method="removeHelper">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
+          <line>241</line>
+          <properties class="assignment.TreapMap" method="removeLeaf">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
