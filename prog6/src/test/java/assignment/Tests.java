@@ -107,6 +107,33 @@ public class Tests {
     }
 
     @Test
+    public void checkIteratorSorted() {
+        Treap<Integer, Integer> t = new TreapMap<>();
+        t.insert(1, 0);
+        t.insert(3, 3);
+        t.insert(2, 5);
+        t.insert(7, 8);
+        t.insert(6, 9);
+        t.insert(5, 2);
+
+        Iterator iter = t.iterator();
+
+        int prev = -1;
+
+        while (iter.hasNext()) {
+            int curr = (int) iter.next();
+
+            if (prev >= curr) {
+                Assertions.assertTrue(false);
+            }
+
+            prev = curr;
+        }
+
+        Assertions.assertTrue(true);
+    }
+
+    @Test
     public void checkIteratorSizeDuplicate() {
         Treap<Integer, Integer> t = new TreapMap<>();
         t.insert(1, 0);
@@ -192,6 +219,63 @@ public class Tests {
 
         Treap[] splits = t1.split(5);
 
-        
+        int split1 = 0;
+        int split2 = 0;
+
+        Iterator t2iter = splits[0].iterator();
+        Iterator t3iter = splits[1].iterator();
+
+        while (t2iter.hasNext()) {
+            int curr = (int) t2iter.next();
+            if (curr < 5) {
+                split1++;
+            }
+        }
+
+        while (t3iter.hasNext()) {
+            int curr = (int) t3iter.next();
+            if (curr > 5) {
+                split2++;
+            }
+        }
+
+        Assertions.assertTrue(split1 == 4 && split2 == 2);
+
+    }
+
+    @Test
+    public void testSplitSameKey() {
+        Treap<Integer, Integer> t1 = new TreapMap<>();
+
+        t1.insert(1, 0);
+        t1.insert(3, 3);
+        t1.insert(2, 5);
+        t1.insert(4, 6);
+        t1.insert(6, 7);
+        t1.insert(8, 9);
+
+        Treap[] splits = t1.split(4);
+
+        int split1 = 0;
+        int split2 = 0;
+
+        Iterator t2iter = splits[0].iterator();
+        Iterator t3iter = splits[1].iterator();
+
+        while (t2iter.hasNext()) {
+            int curr = (int) t2iter.next();
+            if (curr < 4) {
+                split1++;
+            }
+        }
+
+        while (t3iter.hasNext()) {
+            int curr = (int) t3iter.next();
+            if (curr >= 4) {
+                split2++;
+            }
+        }
+
+        Assertions.assertTrue(split1 == 3 && split2 == 3);
     }
 }

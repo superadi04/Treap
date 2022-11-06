@@ -22,8 +22,6 @@
     <list default="true" id="cf3e9fc8-582f-4f9e-afc3-0e1d42285603" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/assignment/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/TreapMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +75,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.checkIteratorSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.checkIteratorSorted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
         <pattern>
@@ -87,39 +85,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkIteratorSize" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.checkIteratorSizeDuplicate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="prog6" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment" />
-      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkIteratorSizeDuplicate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.checkJoin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="prog6" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment" />
-      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkJoin" />
+      <option name="METHOD_NAME" value="checkIteratorSorted" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,13 +107,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests.testSplitDifferentKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="prog6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment" />
+      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
+      <option name="METHOD_NAME" value="testSplitDifferentKey" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.testSplitSameKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="prog6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment" />
+      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
+      <option name="METHOD_NAME" value="testSplitSameKey" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Tests" />
+        <item itemvalue="JUnit.Tests.checkIteratorSorted" />
+        <item itemvalue="JUnit.Tests.testSplitSameKey" />
+        <item itemvalue="JUnit.Tests.testSplitDifferentKey" />
         <item itemvalue="JUnit.Tests.checkJoinNodes" />
-        <item itemvalue="JUnit.Tests.checkJoin" />
-        <item itemvalue="JUnit.Tests.checkIteratorSizeDuplicate" />
-        <item itemvalue="JUnit.Tests.checkIteratorSize" />
       </list>
     </recent_temporary>
   </component>
@@ -189,25 +187,25 @@
       <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="496" y="184" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.25.1440.817@0.25.1440.817" timestamp="1667766334396" />
-    <state width="1396" height="220" key="GridCell.Tab.0.bottom" timestamp="1667776062251">
+    <state width="1396" height="164" key="GridCell.Tab.0.bottom" timestamp="1667776661669">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
-    <state width="1396" height="220" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1667776062251" />
+    <state width="1396" height="164" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1667776661669" />
     <state width="1396" height="206" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667773110197" />
-    <state width="1396" height="220" key="GridCell.Tab.0.center" timestamp="1667776062251">
+    <state width="1396" height="164" key="GridCell.Tab.0.center" timestamp="1667776661668">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
-    <state width="1396" height="220" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1667776062251" />
+    <state width="1396" height="164" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1667776661668" />
     <state width="1396" height="206" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1667773110196" />
-    <state width="1396" height="220" key="GridCell.Tab.0.left" timestamp="1667776062250">
+    <state width="1396" height="164" key="GridCell.Tab.0.left" timestamp="1667776661668">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
-    <state width="1396" height="220" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1667776062250" />
+    <state width="1396" height="164" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1667776661668" />
     <state width="1396" height="206" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1667773110195" />
-    <state width="1396" height="220" key="GridCell.Tab.0.right" timestamp="1667776062251">
+    <state width="1396" height="164" key="GridCell.Tab.0.right" timestamp="1667776661668">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
-    <state width="1396" height="220" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1667776062251" />
+    <state width="1396" height="164" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1667776661668" />
     <state width="1396" height="206" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1667773110196" />
     <state width="1396" height="220" key="GridCell.Tab.1.bottom" timestamp="1667776062252">
       <screen x="0" y="25" width="1440" height="816" />
