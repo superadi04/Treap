@@ -21,12 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cf3e9fc8-582f-4f9e-afc3-0e1d42285603" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/Driver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/MyTreap$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/MyTreap.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/assignment/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/Driver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/MyTreap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/TreapMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +61,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.Tests.checkIteratorSizeDuplicate">
+  <component name="RunManager" selected="JUnit.Tests">
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
@@ -76,22 +73,6 @@
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.checkInsertDuplicate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="prog6" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment" />
-      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkInsertDuplicate" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,7 +109,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.checkRemovePresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.checkJoin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
         <pattern>
@@ -138,7 +119,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkRemovePresent" />
+      <option name="METHOD_NAME" value="checkJoin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.checkJoinNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="prog6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment" />
+      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
+      <option name="METHOD_NAME" value="checkJoinNodes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests" />
+        <item itemvalue="JUnit.Tests.checkJoinNodes" />
+        <item itemvalue="JUnit.Tests.checkJoin" />
         <item itemvalue="JUnit.Tests.checkIteratorSizeDuplicate" />
         <item itemvalue="JUnit.Tests.checkIteratorSize" />
-        <item itemvalue="JUnit.Tests.checkRemovePresent" />
-        <item itemvalue="JUnit.Tests" />
-        <item itemvalue="JUnit.Tests.checkInsertDuplicate" />
       </list>
     </recent_temporary>
   </component>
@@ -192,57 +189,58 @@
       <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="496" y="184" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.25.1440.817@0.25.1440.817" timestamp="1667766334396" />
-    <state width="1396" height="207" key="GridCell.Tab.0.bottom" timestamp="1667772210677">
+    <state width="1396" height="220" key="GridCell.Tab.0.bottom" timestamp="1667776062251">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1396" height="220" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1667776062251" />
+    <state width="1396" height="206" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667773110197" />
+    <state width="1396" height="220" key="GridCell.Tab.0.center" timestamp="1667776062251">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1396" height="220" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1667776062251" />
+    <state width="1396" height="206" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1667773110196" />
+    <state width="1396" height="220" key="GridCell.Tab.0.left" timestamp="1667776062250">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1396" height="220" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1667776062250" />
+    <state width="1396" height="206" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1667773110195" />
+    <state width="1396" height="220" key="GridCell.Tab.0.right" timestamp="1667776062251">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1396" height="220" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1667776062251" />
+    <state width="1396" height="206" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1667773110196" />
+    <state width="1396" height="220" key="GridCell.Tab.1.bottom" timestamp="1667776062252">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1396" height="220" key="GridCell.Tab.1.bottom/0.25.1440.816@0.25.1440.816" timestamp="1667776062252" />
+    <state width="1396" height="206" key="GridCell.Tab.1.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667773110199" />
+    <state width="1396" height="220" key="GridCell.Tab.1.center" timestamp="1667776062252">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1396" height="220" key="GridCell.Tab.1.center/0.25.1440.816@0.25.1440.816" timestamp="1667776062252" />
+    <state width="1396" height="206" key="GridCell.Tab.1.center/0.25.1440.817@0.25.1440.817" timestamp="1667773110198" />
+    <state width="1396" height="220" key="GridCell.Tab.1.left" timestamp="1667776062252">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1396" height="220" key="GridCell.Tab.1.left/0.25.1440.816@0.25.1440.816" timestamp="1667776062252" />
+    <state width="1396" height="206" key="GridCell.Tab.1.left/0.25.1440.817@0.25.1440.817" timestamp="1667773110198" />
+    <state width="1396" height="220" key="GridCell.Tab.1.right" timestamp="1667776062252">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state width="1396" height="220" key="GridCell.Tab.1.right/0.25.1440.816@0.25.1440.816" timestamp="1667776062252" />
+    <state width="1396" height="206" key="GridCell.Tab.1.right/0.25.1440.817@0.25.1440.817" timestamp="1667773110199" />
+    <state width="719" height="408" key="XDebugger.FullValuePopup" timestamp="1667772945118">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1396" height="208" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1667759242163" />
-    <state width="1396" height="207" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667772210677" />
-    <state width="1396" height="207" key="GridCell.Tab.0.center" timestamp="1667772210676">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state width="1396" height="208" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1667759242162" />
-    <state width="1396" height="207" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1667772210676" />
-    <state width="1396" height="207" key="GridCell.Tab.0.left" timestamp="1667772210675">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state width="1396" height="208" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1667759242162" />
-    <state width="1396" height="207" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1667772210675" />
-    <state width="1396" height="207" key="GridCell.Tab.0.right" timestamp="1667772210676">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state width="1396" height="208" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1667759242163" />
-    <state width="1396" height="207" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1667772210676" />
-    <state width="1396" height="241" key="GridCell.Tab.1.bottom" timestamp="1667772176260">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state width="1396" height="241" key="GridCell.Tab.1.bottom/0.25.1440.816@0.25.1440.816" timestamp="1667759184378" />
-    <state width="1396" height="241" key="GridCell.Tab.1.bottom/0.25.1440.817@0.25.1440.817" timestamp="1667772176260" />
-    <state width="1396" height="241" key="GridCell.Tab.1.center" timestamp="1667772176259">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state width="1396" height="241" key="GridCell.Tab.1.center/0.25.1440.816@0.25.1440.816" timestamp="1667759184376" />
-    <state width="1396" height="241" key="GridCell.Tab.1.center/0.25.1440.817@0.25.1440.817" timestamp="1667772176259" />
-    <state width="1396" height="241" key="GridCell.Tab.1.left" timestamp="1667772176259">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state width="1396" height="241" key="GridCell.Tab.1.left/0.25.1440.816@0.25.1440.816" timestamp="1667759184376" />
-    <state width="1396" height="241" key="GridCell.Tab.1.left/0.25.1440.817@0.25.1440.817" timestamp="1667772176259" />
-    <state width="1396" height="241" key="GridCell.Tab.1.right" timestamp="1667772176259">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state width="1396" height="241" key="GridCell.Tab.1.right/0.25.1440.816@0.25.1440.816" timestamp="1667759184377" />
-    <state width="1396" height="241" key="GridCell.Tab.1.right/0.25.1440.817@0.25.1440.817" timestamp="1667772176259" />
-    <state width="719" height="408" key="XDebugger.FullValuePopup" timestamp="1667686624344">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state width="719" height="408" key="XDebugger.FullValuePopup/0.25.1440.817@0.25.1440.817" timestamp="1667686624344" />
+    <state width="719" height="408" key="XDebugger.FullValuePopup/0.25.1440.817@0.25.1440.817" timestamp="1667772945118" />
     <state x="482" y="343" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1667366205626">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state x="482" y="343" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.25.1440.816@0.25.1440.816" timestamp="1667366205626" />
-    <state x="386" y="195" key="run.anything.popup" timestamp="1667771676105">
-      <screen x="0" y="25" width="1440" height="817" />
+    <state x="386" y="195" key="run.anything.popup" timestamp="1667775912544">
+      <screen x="0" y="25" width="1440" height="816" />
     </state>
+    <state x="386" y="195" key="run.anything.popup/0.25.1440.816@0.25.1440.816" timestamp="1667775912544" />
     <state x="386" y="195" key="run.anything.popup/0.25.1440.817@0.25.1440.817" timestamp="1667771676105" />
     <state x="361" y="166" width="670" height="676" key="search.everywhere.popup" timestamp="1667597073957">
       <screen x="0" y="25" width="1440" height="817" />
@@ -264,18 +262,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>353</line>
+          <line>349</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/assignment/Tests.java</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
@@ -287,27 +280,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>97</line>
-          <properties class="assignment.TreapMap" method="lookup">
+          <line>330</line>
+          <properties class="assignment.TreapMap" method="iteratorHelper">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>201</line>
-          <properties class="assignment.TreapMap" method="removeHelper">
+          <line>106</line>
+          <properties class="assignment.TreapMap" method="lookupHelper">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>241</line>
-          <properties class="assignment.TreapMap" method="removeLeaf">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="46" />
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

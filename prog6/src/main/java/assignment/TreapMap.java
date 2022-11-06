@@ -109,17 +109,13 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             return null;
         }
 
-        V result;
-
         if (key.compareTo(currNode.getKey()) < 0) {
-            result = lookupHelper(currNode.getLeftChild(), key);
+            return lookupHelper(currNode.getLeftChild(), key);
         } else if (key.compareTo(currNode.getKey()) > 0) {
-            result = lookupHelper(currNode.getRightChild(), key);
+            return lookupHelper(currNode.getRightChild(), key);
         } else {
-            result = currNode.getValue();
+            return currNode.getValue();
         }
-
-        return result;
     }
 
     @Override
@@ -307,7 +303,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             dummy.setLeftChild(this.root);
             dummy.setRightChild(tRoot);
             this.root = dummy;
-            remove(root.key);
+            this.remove(root.key);
         } else {
             // If tree is empty, we simply set the parameter to this tree
             this.root = tRoot;

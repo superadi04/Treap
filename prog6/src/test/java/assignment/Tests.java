@@ -1,5 +1,6 @@
 package assignment;
 
+import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -126,5 +127,71 @@ public class Tests {
         }
 
         Assertions.assertTrue(count == 6);
+    }
+
+    @Test
+    public void checkJoinSize() {
+        // We assume all nodes in t1 are less than those in t2
+        Treap<Integer, Integer> t1 = new TreapMap<>();
+
+        t1.insert(1, 0);
+        t1.insert(3, 3);
+        t1.insert(2, 5);
+
+        Treap<Integer, Integer> t2 = new TreapMap<>();
+
+        t2.insert(4, 6);
+        t2.insert(6, 7);
+        t2.insert(8, 9);
+
+        t1.join(t2);
+
+        Iterator iter = t1.iterator();
+        int count = 0;
+
+        while (iter.hasNext()) {
+            iter.next();
+            count++;
+        }
+
+        Assert.assertTrue(count == 6);
+    }
+
+    @Test
+    public void checkJoinNodes() {
+        // We assume all nodes in t1 are less than those in t2
+        Treap<Integer, Integer> t1 = new TreapMap<>();
+
+        t1.insert(1, 0);
+        t1.insert(3, 3);
+        t1.insert(2, 5);
+
+        Treap<Integer, Integer> t2 = new TreapMap<>();
+
+        t2.insert(4, 6);
+        t2.insert(6, 7);
+        t2.insert(8, 9);
+
+        t1.join(t2);
+
+        boolean test = t1.lookup(1) == 0 && t1.lookup(3) == 3 && t1.lookup(2) == 5 && t1.lookup(4) == 6 && t1.lookup(6) == 7 && t1.lookup(8) == 9;
+
+        Assert.assertTrue(test);
+    }
+
+    @Test
+    public void testSplitDifferentKey() {
+        Treap<Integer, Integer> t1 = new TreapMap<>();
+
+        t1.insert(1, 0);
+        t1.insert(3, 3);
+        t1.insert(2, 5);
+        t1.insert(4, 6);
+        t1.insert(6, 7);
+        t1.insert(8, 9);
+
+        Treap[] splits = t1.split(5);
+
+        
     }
 }
