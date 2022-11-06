@@ -9,6 +9,7 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
     private class Node {
         private Node leftChild;
         private Node rightChild;
+        private Node parent;
         private K key;
         private V value;
         private int priority;
@@ -25,12 +26,27 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
             this.priority = priority;
         }
 
+        private void setParent(Node parent) {
+            this.parent = parent;
+        }
+
+        private Node getParent() {
+            return this.parent;
+        }
+
         private void setLeftChild(Node leftChild) {
             this.leftChild = leftChild;
+            if (leftChild != null) {
+                leftChild.setParent(this);
+            }
+
         }
 
         private void setRightChild(Node rightChild) {
             this.rightChild = rightChild;
+            if (rightChild != null) {
+                rightChild.setParent(this);
+            }
         }
 
         private void setValue(V value) {
@@ -57,10 +73,19 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
             return this.value;
         }
 
+        private boolean isLeafNode() {
+            return leftChild == null && rightChild == null;
+        }
+
         @Override
         public boolean equals(Object o) {
             Node curr = (Node) o;
             return this.key.equals(curr.getKey());
+        }
+
+        @Override
+        public String toString() {
+            return "[" + this.getPriority() + "] <" + this.getKey() + ", " + this.getValue();
         }
     }
 
@@ -99,12 +124,10 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
     public void insert(K key, V value) {
         Node insertedNode = new Node(key, value);
 
-        // Check for edge case when root is null
         if (this.root == null) {
             this.root = insertedNode;
         } else {
-            placeNodeBST(insertedNode, root);
-            //searchRotate(placedParent, root);
+            placeNodeBST(insertedNode, this.root);
         }
 
     }
@@ -112,62 +135,60 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
     // Helper method to place node in Treap according to BST property
     // Return parent of Node space to be inserted
     private void placeNodeBST(Node insertedNode, Node currNode) {
-        K currKey = currNode.getKey();
-        K insertedKey = insertedNode.getKey();
-
-        if (insertedKey.compareTo(currKey) < 0) {
+        if (insertedNode.getKey().compareTo(currNode.getKey()) < 0) {
             if (currNode.getLeftChild() == null) {
                 currNode.setLeftChild(insertedNode);
             } else {
                 placeNodeBST(insertedNode, currNode.getLeftChild());
             }
 
-            if (currNode.getPriority() < currNode.getLeftChild().getPriority()) {
-                Node rotatedHead = rotateRight(currNode);
-                if (currNode.equals(root)) {
-                    root = rotatedHead;
-                } else {
-                    currNode.setLeftChild(rotatedHead);
-                }
+            if (currNode.getLeftChild().getPriority() > currNode.getPriority()) {
+                rotateRight(currNode);
             }
-        } else if (insertedKey.compareTo(currKey) > 0) {
+        } else if (insertedNode.getKey().compareTo(currNode.getKey()) > 0) {
             if (currNode.getRightChild() == null) {
                 currNode.setRightChild(insertedNode);
             } else {
                 placeNodeBST(insertedNode, currNode.getRightChild());
             }
 
-            if (currNode.getPriority() < currNode.getRightChild().getPriority()) {
-                Node rotatedHead = rotateLeft(currNode);
-                if (currNode.equals(root)) {
-                    root = rotatedHead;
-                } else {
-                    currNode.setRightChild(rotatedHead);
-                }
+            if (currNode.getRightChild().getPriority() > currNode.getPriority()) {
+                rotateLeft(currNode);
             }
         } else {
             currNode.setValue(insertedNode.getValue());
         }
     }
 
+    private void updateParent(Node parent, Node pivot, Node pivotChild) {
+        if (parent == null) {
+            this.root = pivotChild;
+            this.root.setParent(null);
+        } else if (parent.getLeftChild() != null && parent.getLeftChild().getKey().equals(pivot.getKey())) {
+            parent.setLeftChild(pivotChild);
+        } else {
+            parent.setRightChild(pivotChild);
+        }
+    }
+
     // Given parent root where x is the left child of y:
     // Rotate right around y
-    private Node rotateRight(Node a) {
-        Node b = a.getLeftChild();
-        Node bRightSub = b.getRightChild();
-        b.setRightChild(a);
-        a.setLeftChild(bRightSub);
-        return b;
+    private void rotateRight(Node pivot) {
+        Node parent = pivot.getParent();
+        Node pivotLeft = pivot.getLeftChild();
+        pivot.setLeftChild(pivotLeft.getRightChild());
+        pivotLeft.setRightChild(pivot);
+        updateParent(parent, pivot, pivotLeft);
     }
 
     // Given parent root where x is the right child of y:
     // Rotate left around y
-    private Node rotateLeft(Node a) {
-        Node b = a.getRightChild();
-        Node bLeftSub = b.getLeftChild();
-        b.setLeftChild(a);
-        a.setRightChild(bLeftSub);
-        return b;
+    private void rotateLeft(Node pivot) {
+        Node parent = pivot.getParent();
+        Node pivotRight = pivot.getRightChild();
+        pivot.setRightChild(pivotRight.getLeftChild());
+        pivotRight.setLeftChild(pivot);
+        updateParent(parent, pivot, pivotRight);
     }
 
 
@@ -176,84 +197,118 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
         return removeHelper(root, key);
     }
 
-
+    // Recursive helper method for remove function
     private V removeHelper(Node currNode, K deleteKey) {
-        K currKey = currNode.getKey();
+        if (currNode == null) {
+            return null;
+        }
 
-        if (deleteKey.compareTo(currKey) < 0) {
+        if (deleteKey.compareTo(currNode.getKey()) < 0) {
             removeHelper(currNode.getLeftChild(), deleteKey);
-        } else if (deleteKey.compareTo(currKey) > 0) {
+        } else if (deleteKey.compareTo(currNode.getKey()) > 0) {
             removeHelper(currNode.getRightChild(), deleteKey);
         } else {
-            if (currNode.getLeftChild() != null && currNode.getRightChild() != null) {
-                if (currNode.getLeftChild().getPriority() < currNode.getRightChild().getPriority()) {
+            if (currNode.isLeafNode()) {
+                removeLeaf(currNode);
+            } else if (currNode.getLeftChild() != null && currNode.getRightChild() != null) {
+                if (currNode.getLeftChild().getPriority() > currNode.getRightChild().getPriority()) {
                     rotateRight(currNode);
-                    //if (currNode.getRightChild())
                 } else {
                     rotateLeft(currNode);
                 }
+                removeHelper(currNode, deleteKey);
             } else if (currNode.getLeftChild() != null) {
                 rotateRight(currNode);
-            } else if (currNode.getRightChild() != null) {
+                removeHelper(currNode, deleteKey);
+            } else {
                 rotateLeft(currNode);
+                removeHelper(currNode, deleteKey);
             }
+
+            return currNode.getValue();
         }
 
         return null;
     }
 
-    // NEED TO IMPLEMENT
-    private boolean isLeafNode(Node currNode) {
-        return false;
+    // Helper method to remove leaf node of Treap
+    private void removeLeaf(Node currNode) {
+        Node parent = currNode.getParent();
+
+        if (parent == null) {
+            this.root = null;
+        } else if (parent.getLeftChild() != null && parent.getLeftChild().getKey().equals(currNode.getKey())) {
+            parent.setLeftChild(null);
+        } else {
+            parent.setRightChild(null);
+        }
     }
+
 
     @Override
     public Treap[] split(K key) {
-        Treap[] splits = new Treap[2];
+        Treap[] splits = new MyTreap[2];
 
         if (root == null) {
             return splits;
         }
 
         Node n = new Node(key, null, Integer.MAX_VALUE);
+        this.placeNodePriority(n, root);
 
         splits[0] = new MyTreap(root.getLeftChild());
         splits[1] = new MyTreap(root.getRightChild());
 
-        // Remove the added node
-
         return splits;
     }
 
-    // Helper method
-    private void splitSearch(Treap[] splits, Node currNode, K key) {
-        if (currNode == null) {
-            return;
-        }
+    private void placeNodePriority(Node insertedNode, Node currNode) {
+        if (insertedNode.getKey().compareTo(currNode.getKey()) <= 0) {
+            if (currNode.getLeftChild() == null) {
+                currNode.setLeftChild(insertedNode);
+            } else {
+                placeNodePriority(insertedNode, currNode.getLeftChild());
+            }
 
-        if (currNode.getKey().compareTo(key) < 0) {
-            splits[0].insert(currNode.getKey(), currNode.getValue());
+            if (currNode.getLeftChild().getPriority() > currNode.getPriority()) {
+                rotateRight(currNode);
+            }
         } else {
-            splits[1].insert(currNode.getKey(), currNode.getValue());
-        }
+            if (currNode.getRightChild() == null) {
+                currNode.setRightChild(insertedNode);
+            } else {
+                placeNodePriority(insertedNode, currNode.getRightChild());
+            }
 
-        splitSearch(splits, currNode.getLeftChild(), key);
-        splitSearch(splits, currNode.getRightChild(), key);
+            if (currNode.getRightChild().getPriority() > currNode.getPriority()) {
+                rotateLeft(currNode);
+            }
+        }
     }
 
     @Override
     public void join(Treap t) {
-
+        MyTreap myT = (MyTreap) t;
+        Node tRoot = myT.root;
+        if (root != null) {
+            Node dummy = new Node(root.key, root.value);
+            dummy.setLeftChild(this.root);
+            dummy.setRightChild(tRoot);
+            this.root = dummy;
+            remove(root.key);
+        } else {
+            this.root = tRoot;
+        }
     }
 
     @Override
     public void meld(Treap t) throws UnsupportedOperationException {
-
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void difference(Treap t) throws UnsupportedOperationException {
-
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -270,32 +325,31 @@ public class MyTreap<K extends Comparable<K>, V> implements Treap<K, V> {
         }
 
         iteratorHelper(nodes, currNode.getLeftChild());
-        iteratorHelper(nodes, currNode.getRightChild());
-
         nodes.add(currNode);
+        iteratorHelper(nodes, currNode.getRightChild());
     }
 
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder();
-        toStringHelper(output, root);
+        this.toStringHelper(output, root, "");
         return output.toString();
     }
 
     // Helper method for toString(), pre-order traversal
-    private void toStringHelper(StringBuilder output, Node curr) {
+    private void toStringHelper(StringBuilder output, Node curr, String tab) {
         if (curr == null) {
             return;
         }
 
-        toStringHelper(output, curr.getLeftChild());
-        toStringHelper(output, curr.getRightChild());
+        output.append(tab + curr.toString() + ">\n");
 
-        output.append("[" + curr.getPriority() + "] <" + curr.getKey() + ", " + curr.getValue() + ">\n");
+        toStringHelper(output, curr.getLeftChild(), tab + "    ");
+        toStringHelper(output, curr.getRightChild(), tab + "    ");
     }
 
     @Override
     public double balanceFactor() throws UnsupportedOperationException {
-        return 0;
+        throw new UnsupportedOperationException();
     }
 }
