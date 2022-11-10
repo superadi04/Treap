@@ -361,8 +361,8 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
         output.append(tab + curr.toString() + "\n");
 
-        toStringHelper(output, curr.getLeftChild(), tab + "    ");
-        toStringHelper(output, curr.getRightChild(), tab + "    ");
+        toStringHelper(output, curr.getLeftChild(), tab + "\t");
+        toStringHelper(output, curr.getRightChild(), tab + "\t");
     }
 
     @Override
