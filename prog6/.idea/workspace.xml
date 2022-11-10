@@ -21,14 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cf3e9fc8-582f-4f9e-afc3-0e1d42285603" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/META-INF/prog6.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/Treap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prog6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/prog6.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

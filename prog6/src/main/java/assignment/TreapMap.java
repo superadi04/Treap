@@ -120,7 +120,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
     @Override
     public void insert(K key, V value) {
-        if (key == null) {
+        if (key == null || value == null) {
             return;
         }
 
@@ -256,7 +256,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
     public Treap<K, V>[] split(K key) {
         Treap<K, V>[] splits = new TreapMap[2];
 
-        if (root == null) {
+        if (root == null || key == null) {
             return splits;
         }
 
