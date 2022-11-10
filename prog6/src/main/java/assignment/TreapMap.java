@@ -120,6 +120,10 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
     @Override
     public void insert(K key, V value) {
+        if (key == null) {
+            return;
+        }
+
         Node insertedNode = new Node(key, value);
 
         if (this.root == null) { // Check if there are no nodes in the tree
@@ -294,6 +298,10 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
     @Override
     public void join(Treap t) {
+        if (t == null) {
+            return;
+        }
+
         TreapMap myT = (TreapMap) t;
         Node tRoot = myT.root;
 
@@ -351,7 +359,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             return;
         }
 
-        output.append(tab + curr.toString() + ">\n");
+        output.append(tab + curr.toString() + "\n");
 
         toStringHelper(output, curr.getLeftChild(), tab + "    ");
         toStringHelper(output, curr.getRightChild(), tab + "    ");

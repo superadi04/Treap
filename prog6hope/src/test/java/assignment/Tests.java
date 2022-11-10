@@ -334,7 +334,7 @@ public class Tests {
     }
 
     @Test
-    public void rootIsNullJoin() {
+    public void rootIsNull() {
         Treap<Integer, Integer> t = new TreapMap<>();
 
         t.join(null);
@@ -343,7 +343,7 @@ public class Tests {
 
         Iterator i = t.iterator();
 
-            while (i.hasNext()) {
+        while (i.hasNext()) {
             i.next();
             count++;
         }
@@ -387,24 +387,6 @@ public class Tests {
         Treap<Integer, Integer> t = new TreapMap<>();
 
         t.insert(null, 0);
-
-        int count = 0;
-
-        Iterator i = t.iterator();
-
-        while (i.hasNext()) {
-            i.next();
-            count++;
-        }
-
-        Assertions.assertTrue(count == 0);
-    }
-
-    @Test
-    public void insertValueIsNull() {
-        Treap<Integer, Integer> t = new TreapMap<>();
-
-        t.insert(0, null);
 
         int count = 0;
 

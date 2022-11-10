@@ -20,15 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf3e9fc8-582f-4f9e-afc3-0e1d42285603" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/META-INF/prog6.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/Treap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prog6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/prog6.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../prog6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog6/bin/META-INF/prog6.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog6/bin/assignment/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/../prog6/bin/assignment/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog6/bin/assignment/TreapMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/../prog6/bin/assignment/TreapMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog6/prog6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../prog6/prog6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog6/src/main/java/assignment/TreapMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../prog6/src/main/java/assignment/TreapMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog6/src/test/java/assignment/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../prog6/src/test/java/assignment/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,22 +52,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "/Users/adityachebrolu/Documents/GitHub/Treap/prog6hope",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests">
+  <component name="RunManager" selected="JAR Application.group2-treap.jar">
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
-      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="assignment.*" />
@@ -78,14 +76,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.checkInsertDuplicateSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.removeEmptyTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
         <pattern>
@@ -95,13 +91,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkInsertDuplicateSize" />
+      <option name="METHOD_NAME" value="removeEmptyTree" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.checkIteratorSorted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.splitKeyIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
         <pattern>
@@ -111,13 +107,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkIteratorSorted" />
+      <option name="METHOD_NAME" value="splitKeyIsNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.checkRemoveSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.testBalancedTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
         <pattern>
@@ -127,36 +123,48 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkRemoveSize" />
+      <option name="METHOD_NAME" value="testBalancedTree" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="group2-treap.jar" type="JarApplication" temporary="true">
+    <configuration name="Tests.toStringEmptyTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="prog6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment" />
+      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
+      <option name="METHOD_NAME" value="toStringEmptyTree" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="group2-treap.jar" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/group2-treap.jar" />
-      <method v="2" />
-    </configuration>
-    <configuration name="group32-treap.jar" type="JarApplication">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/group32-treap.jar" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JAR Application.group32-treap.jar" />
       <item itemvalue="JAR Application.group2-treap.jar" />
+      <item itemvalue="JUnit.Tests.removeEmptyTree" />
+      <item itemvalue="JUnit.Tests.splitKeyIsNull" />
+      <item itemvalue="JUnit.Tests.testBalancedTree" />
+      <item itemvalue="JUnit.Tests.toStringEmptyTree" />
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.Tests.checkInsertDuplicateSize" />
-      <item itemvalue="JUnit.Tests.checkIteratorSorted" />
-      <item itemvalue="JUnit.Tests.checkRemoveSize" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Tests" />
-        <item itemvalue="JAR Application.group2-treap.jar" />
-        <item itemvalue="JUnit.Tests.checkRemoveSize" />
-        <item itemvalue="JUnit.Tests.checkInsertDuplicateSize" />
-        <item itemvalue="JUnit.Tests.checkIteratorSorted" />
+        <item itemvalue="JUnit.Tests.testBalancedTree" />
+        <item itemvalue="JUnit.Tests.toStringEmptyTree" />
+        <item itemvalue="JUnit.Tests.splitKeyIsNull" />
+        <item itemvalue="JUnit.Tests.removeEmptyTree" />
       </list>
     </recent_temporary>
   </component>
@@ -190,17 +198,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>239</line>
+          <line>235</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>253</line>
+          <line>249</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>357</line>
+          <line>349</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -210,7 +218,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>268</line>
+          <line>264</line>
           <properties class="assignment.TreapMap">
             <option name="EMULATED" value="true" />
           </properties>
