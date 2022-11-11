@@ -4,6 +4,7 @@ import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 
 public class Tests {
@@ -446,6 +447,25 @@ public class Tests {
         }
 
         System.out.println(t);
+    }
+
+    @Test
+    public void testConcurrentModification() {
+        Treap<Integer, Integer> map = new TreapMap<>();
+        map.insert(1, 1);
+        map.insert(3, 2);
+
+        try {
+            Iterator<Integer> i = map.iterator();
+            i.next();
+            map.insert(1, 4);
+            i.next();
+        } catch (ConcurrentModificationException e) {
+            Assertions.assertTrue(true);
+            return;
+        }
+
+        Assertions.assertTrue(false);
     }
 
     @Test

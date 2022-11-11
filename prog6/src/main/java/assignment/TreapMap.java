@@ -1,8 +1,6 @@
 package assignment;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
@@ -85,6 +83,8 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
     // Root node of tree
     private Node root;
 
+    private boolean modified;
+
     public TreapMap() {
 
     }
@@ -132,6 +132,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             placeNodeBST(insertedNode, this.root);
         }
 
+        modified = true;
     }
 
     // Helper method to place node in Treap according to BST property
@@ -216,6 +217,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
             if (currNode.isLeafNode()) {
                 removeLeaf(currNode);
+                modified = true;
             } else if (currNode.getLeftChild() != null && currNode.getRightChild() != null) {
                 if (currNode.getLeftChild().getPriority() > currNode.getRightChild().getPriority()) {
                     rotateRight(currNode);
@@ -267,6 +269,8 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
         splits[0] = new TreapMap(root.getLeftChild());
         splits[1] = new TreapMap(root.getRightChild());
 
+        modified = true;
+
         return splits;
     }
 
@@ -316,6 +320,8 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             // If tree is empty, we simply set the parameter to this tree
             this.root = tRoot;
         }
+
+        modified = true;
     }
 
     @Override
@@ -332,7 +338,31 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
     public Iterator<K> iterator() {
         List<K> nodes = new ArrayList<>();
         iteratorHelper(nodes, root);
-        return nodes.iterator();
+        modified = false;
+        return new Iterator<K> () {
+            private int count;
+
+            @Override
+            public boolean hasNext() {
+                if (count >= nodes.size()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @Override
+            public K next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+
+                if (modified) {
+                    throw new ConcurrentModificationException();
+                } else {
+                    return nodes.get(count++);
+                }
+            }
+        };
     }
 
     // In order traversal for iterator
