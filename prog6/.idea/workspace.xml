@@ -22,7 +22,10 @@
     <list default="true" id="cf3e9fc8-582f-4f9e-afc3-0e1d42285603" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/assignment/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prog6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/prog6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/TreapMap$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/TreapMap$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment/TreapMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/assignment/TreapMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group32-treap.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment/TreapMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment/Tests.java" afterDir="false" />
     </list>
@@ -44,6 +47,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2GyW9xWvQl3eNj3GQuw2cghAXc7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -62,7 +68,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests">
+  <component name="RunManager" selected="JUnit.Tests.testMeld">
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <useClassPathOnly />
@@ -81,7 +87,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.checkInsertDuplicateSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.testBalanceFactor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="prog6" />
       <extension name="coverage">
         <pattern>
@@ -91,23 +97,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment" />
       <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkInsertDuplicateSize" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.checkRemoveSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="prog6" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment" />
-      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
-      <option name="METHOD_NAME" value="checkRemoveSize" />
+      <option name="METHOD_NAME" value="testBalanceFactor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,6 +119,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests.testMeld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="prog6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment" />
+      <option name="MAIN_CLASS_NAME" value="assignment.Tests" />
+      <option name="METHOD_NAME" value="testMeld" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="group2-treap.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/group2-treap.jar" />
       <method v="2" />
@@ -141,18 +147,18 @@
     <list>
       <item itemvalue="JAR Application.group32-treap.jar" />
       <item itemvalue="JAR Application.group2-treap.jar" />
+      <item itemvalue="JUnit.Tests.testMeld" />
+      <item itemvalue="JUnit.Tests.testBalanceFactor" />
       <item itemvalue="JUnit.Tests.testConcurrentModification" />
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.Tests.checkInsertDuplicateSize" />
-      <item itemvalue="JUnit.Tests.checkRemoveSize" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests.testMeld" />
         <item itemvalue="JUnit.Tests" />
+        <item itemvalue="JUnit.Tests.testBalanceFactor" />
         <item itemvalue="JUnit.Tests.testConcurrentModification" />
         <item itemvalue="JAR Application.group2-treap.jar" />
-        <item itemvalue="JUnit.Tests.checkRemoveSize" />
-        <item itemvalue="JUnit.Tests.checkInsertDuplicateSize" />
       </list>
     </recent_temporary>
   </component>
@@ -195,14 +201,9 @@
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>354</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/assignment/TreapMap.java</url>
-          <line>346</line>
-          <option name="timeStamp" value="55" />
+          <url>file://$PROJECT_DIR$/src/test/java/assignment/Tests.java</url>
+          <line>474</line>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

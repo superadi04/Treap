@@ -4,6 +4,7 @@ import java.util.*;
 
 public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
+    // Internal node class
     private class Node {
         private Node leftChild;
         private Node rightChild;
@@ -120,6 +121,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
     @Override
     public void insert(K key, V value) {
+        // Sanity check if key or value is null
         if (key == null || value == null) {
             return;
         }
@@ -129,6 +131,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
         if (this.root == null) { // Check if there are no nodes in the tree
             this.root = insertedNode;
         } else {
+            // Recursive call
             placeNodeBST(insertedNode, this.root);
         }
 
@@ -141,10 +144,11 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             if (currNode.getLeftChild() == null) {
                 currNode.setLeftChild(insertedNode);
             } else {
+                // Recursive call
                 placeNodeBST(insertedNode, currNode.getLeftChild());
             }
 
-            // Determine whether to percolate upwards
+            // Determine whether to percolate upwards w/ recursive backtracking
             if (currNode.getLeftChild().getPriority() > currNode.getPriority()) {
                 rotateRight(currNode);
             }
@@ -152,10 +156,11 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             if (currNode.getRightChild() == null) {
                 currNode.setRightChild(insertedNode);
             } else {
+                // Recursive call
                 placeNodeBST(insertedNode, currNode.getRightChild());
             }
 
-            // Determine whether to percolate upwards
+            // Determine whether to percolate upwards w/ recursive backtracking
             if (currNode.getRightChild().getPriority() > currNode.getPriority()) {
                 rotateLeft(currNode);
             }
@@ -170,8 +175,10 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             this.root = pivotChild;
             this.root.setParent(null);
         } else if (parent.getLeftChild() != null && parent.getLeftChild().getKey().equals(pivot.getKey())) {
+            // Check if the parent's left child equals the current node
             parent.setLeftChild(pivotChild);
         } else {
+            // Check if the parent's right child equals the current node
             parent.setRightChild(pivotChild);
         }
     }
@@ -219,6 +226,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
                 removeLeaf(currNode);
                 modified = true;
             } else if (currNode.getLeftChild() != null && currNode.getRightChild() != null) {
+                // Both child nodes are not null
                 if (currNode.getLeftChild().getPriority() > currNode.getRightChild().getPriority()) {
                     rotateRight(currNode);
                 } else {
@@ -258,14 +266,16 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
     public Treap<K, V>[] split(K key) {
         Treap<K, V>[] splits = new TreapMap[2];
 
+        // Sanity check if root or key is null
         if (root == null || key == null) {
             return splits;
         }
 
         // Add new dummy node with Infinite priority
         Node n = new Node(key, null, Integer.MAX_VALUE);
-        this.placeNodePriority(n, root);
+        placeNodePriority(n, root);
 
+        // Split into 2 Treaps
         splits[0] = new TreapMap(root.getLeftChild());
         splits[1] = new TreapMap(root.getRightChild());
 
@@ -284,6 +294,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
                 placeNodePriority(insertedNode, currNode.getLeftChild());
             }
 
+            // Percolate upwards, recursive backtracking
             if (currNode.getLeftChild().getPriority() > currNode.getPriority()) {
                 rotateRight(currNode);
             }
@@ -294,6 +305,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
                 placeNodePriority(insertedNode, currNode.getRightChild());
             }
 
+            // Percolate upwards, recursive backtracking
             if (currNode.getRightChild().getPriority() > currNode.getPriority()) {
                 rotateLeft(currNode);
             }
@@ -302,6 +314,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
     @Override
     public void join(Treap t) {
+        // Sanity check if t is null
         if (t == null) {
             return;
         }
@@ -315,7 +328,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             dummy.setLeftChild(this.root);
             dummy.setRightChild(tRoot);
             this.root = dummy;
-            this.remove(root.key);
+            remove(root.key);
         } else {
             // If tree is empty, we simply set the parameter to this tree
             this.root = tRoot;
@@ -326,7 +339,19 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
 
     @Override
     public void meld(Treap t) throws UnsupportedOperationException {
-        throw new UnsupportedOperationException();
+        if (t == null) {
+            return;
+        }
+
+        TreapMap myT = (TreapMap) t;
+        Node tRoot = myT.root;
+        this.root = meldHelper(this.root, tRoot);
+    }
+
+    private void swap(Node a, Node b) {
+        Node c = a;
+
+
     }
 
     @Override
@@ -340,7 +365,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
         iteratorHelper(nodes, root);
         modified = false;
         return new Iterator<K> () {
-            private int count;
+            private int count; // Current element within sorted collection
 
             @Override
             public boolean hasNext() {
@@ -356,6 +381,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
                     throw new NoSuchElementException();
                 }
 
+                // Check if Treap was modified during operation or not
                 if (modified) {
                     throw new ConcurrentModificationException();
                 } else {
@@ -365,12 +391,13 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
         };
     }
 
-    // In order traversal for iterator
+    // Helper method to acquire all keys in sorted order
     private void iteratorHelper(List<K> nodes, Node currNode) {
         if (currNode == null) {
             return;
         }
 
+        // In order traversal
         iteratorHelper(nodes, currNode.getLeftChild());
         nodes.add(currNode.getKey());
         iteratorHelper(nodes, currNode.getRightChild());
@@ -379,7 +406,7 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder();
-        this.toStringHelper(output, root, "");
+        toStringHelper(output, root, "");
         return output.toString();
     }
 
@@ -389,14 +416,37 @@ public class TreapMap<K extends Comparable<K>, V> implements Treap<K, V> {
             return;
         }
 
-        output.append(tab + curr.toString() + "\n");
+        output.append(tab + curr + "\n");
 
         toStringHelper(output, curr.getLeftChild(), tab + "\t");
         toStringHelper(output, curr.getRightChild(), tab + "\t");
     }
 
+    // Used to measure how balanced tree is
     @Override
-    public double balanceFactor() throws UnsupportedOperationException {
-        throw new UnsupportedOperationException();
+    public double balanceFactor() {
+        if (root == null || root.isLeafNode()) {
+            return 1;
+        }
+        int[] ans = new int[2];
+        ans[0] = Integer.MAX_VALUE;
+        balanceFactorHelper(0, root, ans);
+
+        return (double) ans[1] / ans[0];
+    }
+
+    public void balanceFactorHelper(int currHeight, Node currNode, int[] ans) {
+        if (currNode == null) {
+            return;
+        }
+
+        // Find minimum and maximum height of Treap
+        if (currNode.isLeafNode()) {
+            ans[0] = Math.min(ans[0], currHeight);
+            ans[1] = Math.max(ans[1], currHeight);
+        } else {
+            balanceFactorHelper(currHeight + 1, currNode.getLeftChild(), ans);
+            balanceFactorHelper(currHeight + 1, currNode.getRightChild(), ans);
+        }
     }
 }

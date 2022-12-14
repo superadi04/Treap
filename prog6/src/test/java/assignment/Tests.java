@@ -242,7 +242,7 @@ public class Tests {
     @Test
     public void checkJoinNodes() {
         // We assume all nodes in t1 are less than those in t2
-        Treap<Integer, Integer> t1 = new TreapMap<>();
+        TreapMap<Integer, Integer> t1 = new TreapMap<>();
 
         t1.insert(1, 0);
         t1.insert(3, 3);
@@ -466,6 +466,36 @@ public class Tests {
         }
 
         Assertions.assertTrue(false);
+    }
+
+    @Test
+    public void testBalanceFactor() {
+        Treap<Integer, Integer> t = new TreapMap<>();
+
+        for (int i = 0; i < 1000; i++) {
+            t.insert((int) (Math.random() * Integer.MAX_VALUE), 0);
+        }
+
+        System.out.println(t.balanceFactor());
+    }
+
+    @Test
+    public void testMeld() {
+        Treap<Integer, Integer> t = new TreapMap<>();
+
+        t.insert(3, 4);
+        t.insert(9, 3);
+        t.insert(10, 3);
+
+        Treap<Integer, Integer> t2 = new TreapMap<>();
+
+        t2.insert(2, 1);
+        t2.insert(3, 4);
+        t2.insert(1, 976);
+
+        t.meld(t2);
+
+        System.out.println(t);
     }
 
     @Test
